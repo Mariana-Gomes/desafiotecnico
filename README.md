@@ -1,101 +1,92 @@
-# Teste Técnico Mobile⚡
+# ⚡Teste Técnico Mobile
 
 O Teste Técnico consiste em recriar uma interface de design disponibilizada no [Figma](https://www.figma.com/design/Lpdera6rS8SztMUAwzkpN0/Teste-T%C3%A9cnico-Mobile-BeTalent?node-id=7304-509&node-type=frame&t=tvb3ahA6tVeKzBMR-0), 
 utilizando React Native ou Flutter. O aplicativo deve consumir dados de uma API simulada que lista funcionários e deve permitir a pesquisa na tabela pelos 
 seguintes critérios: cargo, nome e telefone.
 
-## O App 📱
+## 📱 O App 
 
-![bg-mobile](https://github.com/user-attachments/assets/0206689e-2c79-4434-b04b-e923f326a43d)
+![bg-mobile](https://github.com/user-attachments/assets/969b63ea-e4ad-4c2c-81a3-f3d53b8b51cb)
 
-## Tecnologias Utilizadas 👩🏻‍💻
+## 👩🏻‍💻 Tecnologias Utilizadas
 
-- **React Native**: Biblioteca para construir aplicativos móveis.
-- **Expo**: Ferramenta para desenvolvimento rápido de aplicações React Native.
-- **Axios**: Biblioteca para realizar requisições HTTP, utilizada para consumir a API simulada e buscar os dados dos funcionários.
-- **Styled-Components**: Biblioteca para estilização de componentes, permitindo escrever estilos CSS diretamente no código JavaScript, facilitando a criação de interfaces personalizadas e reutilizáveis.
-- **TypeScript**: Superset do JavaScript que adiciona tipagem estática, proporcionando maior segurança e facilidade na manutenção do código.
+- *React Native*: Biblioteca para construir aplicativos móveis.
+- *Expo*: Ferramenta para desenvolvimento rápido de aplicações React Native.
+- *Axios*: Biblioteca para realizar requisições HTTP, utilizada para consumir a API simulada e buscar os dados dos funcionários.
+- *Styled-Components*: Biblioteca para estilização de componentes, permitindo escrever estilos CSS diretamente no código JavaScript.
+- *TypeScript*: Superset do JavaScript que adiciona tipagem estática, proporcionando maior segurança e facilidade na manutenção do código.
 
-## Pré-requisitos 
+# ⚙️ Instruções para Rodar o Projeto
 
-Antes de rodar o projeto, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
-
-- [Node.js](https://nodejs.org/) (versão X ou superior)
-- [Expo CLI](https://docs.expo.dev/get-started/installation/)
-  
-## Instalação do Expo e Projeto 
-
-Para instalar o Expo CLI, execute:
-
+## 1. Clone o repositório
 ```bash
-  npm install -g expo-cli
+git clone https://github.com/Mariana-Gomes/desafiotecnico.git
+cd desafiotecnico
 ```
 
-Clone o repositório:
+## 2. Instale as dependências
 
-```bash
-  git clone https://github.com/Mariana-Gomes/betalent-teste.git
-```
+Você pode usar **npm** ou **yarn** para instalar as dependências do projeto.
 
-Navegue até o diretório do projeto:
-
-```bash
-  cd betalent-teste
-```
-
-Instale as dependências
-
-```bash 
+- Usando **npm**:
+  ```bash
   npm install
-```
+  ```
 
-E inicie o projeto usando o Expo
+- Ou, se preferir usar **Yarn**:
+  ```bash
+  yarn install
+  ```
 
-```bash
-  expo start
-```
+## 3. Inicie a API simulada
 
-- Utilize o QR Code exbido no seu terminal ou na página web do Expo para abrir o aplicativo no seu dispositivo móvel. 
-Certifique-se de que o aplicativo Expo Go esteja instalado no seu dispositivo, mas se preferir também é possível rodar o aplicativo no simulador ou emulador.
+Para rodar o servidor da API simulada (`json-server`), certifique-se de estar na pasta raiz do projeto no seu terminal e execute o seguinte comando:
 
-## Rodando a API Simulada 
 
-É necessário deixar a api simulada rodando no terminal para que os dados possam ser visualizados na aplicação. Para isso é necessário adicionar os seguintes comandos:
+- Usando **npm**:
+  ```bash
+  npm run server
+  ```
 
-```bash 
-  npm install json-server
-```
+- Ou, usando **Yarn**:
+  ```bash
+  yarn server
+  ```
 
-É necessário navegar até o diretório **service > api.ts** e alterar o valor da variavel IP para o seu ip local
+### 🚨 Importante!
 
-```bash 
+
+Para que o servidor da api simulada funcione corretamente, pode ser necessário alterar o valor do **IP** no arquivo `src/service/api.ts`.
+
+```typescript
 const IP = "192.168.0.108";
-
-const api = axios.create({
-  baseURL: `http://${IP}:3000`,
-});
 ```
 
-E por fim, use o comando abaixo para rodar a API simulada:
+Nesse caso, basta alterar o valor dessa variável para o **IPv4** do computador que irá rodar o projeto
 
-```bash
-npx json-server database.json
+#### Como localizar o IPv4:
+
+- **Windows**: Abra o `cmd` e execute `ipconfig`. O `IPv4 Address` estará listado.
+- **macOS**: Abra o Terminal e execute `ifconfig`. Procure por `inet` na interface de rede (Wi-Fi ou Ethernet).
+- **Linux**: Abra o Terminal e execute `ip a` ou `ifconfig`. O `inet` será exibido na interface de rede.
+
+#### Observação:
+Se for rodar o projeto em um emulador, pode apenas alterar o valor da variável **IP** para `localhost`, ficando dessa forma:
+
+```typescript
+const IP = "localhost";
 ```
 
-```bash
-yarn server 
-```
+## 4. Rodar o app
 
+Após ajustar o IP e garantir que o servidor esteja rodando, abra um segundo terminal, também na pasta raiz do projeto, e execute o seguinte comando para rodar o app:
 
+- Usando **npm**:
+  ```bash
+  npm start
+  ```
 
-
-
-
-
-
-
-
-
-  
-
-
+- Ou, usando **Yarn**:
+  ```bash
+  yarn start
+  ```
