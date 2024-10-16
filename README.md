@@ -16,6 +16,28 @@ seguintes critérios: cargo, nome e telefone.
 - *Styled-Components*: Biblioteca para estilização de componentes, permitindo escrever estilos CSS diretamente no código JavaScript.
 - *TypeScript*: Superset do JavaScript que adiciona tipagem estática, proporcionando maior segurança e facilidade na manutenção do código.
 
+## Pré-requisitos para rodar o app: 
+
+- [Node.js](https://nodejs.org/).
+- Npm ou [Yarn](https://yarnpkg.com/getting-started/install)
+- Expo CLI 
+    - Para instalar globalmente:
+        - Usando **npm**:
+       ```bash
+       npm install -g expo-cli
+       ```
+        - Usando **Yarn**:
+       ```bash
+       yarn global add expo-cli
+       ```
+**Alternativa**: Use o Expo CLI local no projeto com `npx expo start`, sem instalação global.
+
+- **Um dispositivo móvel (iOS/Android) ou um emulador**:
+   - Para testar o app, você pode usar:
+     - **Dispositivo físico**: Precisa ter instalado o app Expo Go (disponível na App Store/Google Play).
+     - **Emulador Android/iOS**: Para iOS, será necessário Xcode instalado (macOS), e para Android, o Android Studio.
+
+
 # ⚙️ Instruções para Rodar o Projeto
 
 ## 1. Clone o repositório
